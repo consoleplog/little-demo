@@ -6,17 +6,31 @@ class About extends React.Component {
     super();
     this.state={
       data:{},
-      wait:true
+      wait:true,
+      ipv:''
     }
+  }
+  et(e){
+    let value = e.target.value
+    this.setState({ipv:value})
+
   }
   componentDidMount(){
     // console.log(searchGit)
-    searchGit().then( (data) => {console.log(data);
-      this.setState({data:data.data,wait:false
+    // searchGit().then( (recData) => {console.log(recData);
+    //   this.setState({data:recData.getData,wait:false
+    //
+    //   })
+    // } )
+
+  }
+  et1(){
+    let name = this.state.ipv
+    searchGit(name).then( (recData) => {console.log(recData);
+      this.setState({data:recData.getData,wait:false
 
       })
     } )
-
   }
   render () {
     let gitInfo = (
@@ -27,6 +41,8 @@ class About extends React.Component {
     )
     return(
       <div>
+        <input type='text' placeholder='github username' value={this.state.ipv} onChange={this.et.bind(this)} />
+        <button onClick={this.et1.bind(this)}>serch</button><br />
         {
           this.state.wait ? '正在获取数据' :
           gitInfo

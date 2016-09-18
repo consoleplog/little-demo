@@ -1,11 +1,25 @@
 import axios from 'axios';
-function searchGit(){
-  return axios.get('https://api.github.com/users/consoleplog')
+function searchGit(add){
+  let address =`https://api.github.com/users/${add}`
+  console.log(address)
+  return axios.get(address)
         .then((res) => (
-          { data:res.data}
+          { getJson:res.data}
         ))
         .catch(function (error) {
           alert(error);
         });
 }
-export { searchGit }
+export { searchGit };
+
+function getJson(){
+  let address = `https://raw.githubusercontent.com/consoleplog/datademo/master/card.json`
+  return axios.get(address)
+        .then((res) => (
+          { getJson:res.data }
+        ))
+        .catch(function (error) {
+          alert(error);
+        });
+}
+export { getJson }
