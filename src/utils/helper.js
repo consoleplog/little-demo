@@ -10,7 +10,7 @@ function searchGit(add){
           alert(error);
         });
 }
-export { searchGit };
+
 
 function getJson(){
   let address = `https://raw.githubusercontent.com/consoleplog/datademo/master/card.json?${Math.random()}`
@@ -22,4 +22,14 @@ function getJson(){
           alert(error);
         });
 }
-export { getJson }
+function getMd(add){
+  let address = `https://raw.githubusercontent.com/consoleplog/datademo/master/blog/${add}.md`
+  return axios.get(address)
+        .then((res) => (
+          { getMd:res.data }
+        ))
+        .catch(function (error) {
+          alert(error);
+        });
+}
+export { searchGit ,getJson ,getMd }

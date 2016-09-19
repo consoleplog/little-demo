@@ -23,3 +23,21 @@
 -  1.  cd  /
 -  2. git clone 'url'/
 -  3. rm -rf .git  /删除本地 仓库 为创建仓库做准备
+
+
+#marked
+
+
+### react link marked style
+1. [readme](https://www.npmjs.com/package/marked)
+2. npm install marked --save
+3. import marked from 'marked'
+4. class 'fild' and export 'fild'
+5. render in index.jx
+6. 'fild' inner  write method
+
+```js
+marked('')
+
+
+```
