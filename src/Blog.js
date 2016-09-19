@@ -31,7 +31,7 @@ class Blog extends React.Component {
     return(
       <div>
 
-        <div dangerouslySetInnerHTML={{__html:content}} />
+        <div dangerouslySetInnerHTML={{__html:content}} className='post-content' />
       </div>
     )
   }
